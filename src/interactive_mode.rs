@@ -132,7 +132,7 @@ impl App {
 
         self.current_source_total_duration = source.total_duration();
 
-        if (self.looping) {
+        if self.looping {
             self.sink.append(source.repeat_infinite());
         } else {
             self.sink.append(source);
