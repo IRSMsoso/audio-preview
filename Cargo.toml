@@ -5,7 +5,7 @@ edition = "2021"
 description = "TUI for quickly navigating the file system and previewing audio files"
 repository = "https://github.com/IRSMsoso/audio-preview"
 readme = "README.md"
-license = ""
+license = "Apache-2.0"
 
 [[bin]]
 name = "listen"
