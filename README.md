@@ -4,7 +4,9 @@ Quickly preview your audio files!
 
 ## Installation
 
-`cargo install audio-preview`
+- Install the Rust toolchain: rustup.rs
+
+- `cargo install audio-preview --locked`
 
 ## Usage
 
