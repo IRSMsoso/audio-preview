@@ -1,6 +1,6 @@
 [package]
 name = "audio-preview"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "TUI for quickly navigating the file system and previewing audio files"
 repository = "https://github.com/IRSMsoso/audio-preview"
@@ -16,3 +16,4 @@ clap = { version = "4.5.16", features = ["derive"] }
 ratatui = "0.28.0"
 rodio = "0.19.0"
 anyhow = "1.0.86"
+showfile = "0.1.1"

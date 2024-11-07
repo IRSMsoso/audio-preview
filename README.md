@@ -18,10 +18,11 @@ or
 
 ## Keybinds
 
-| Keybind                               | Usage                        |
-|---------------------------------------|------------------------------|
-| Q                                     | Quit                         |
-| Arrow Keys                            | Navigate                     |
-| Tab                                   | Switch directories and files |
-| L                                     | Toggle looping               |
-| Right Arrow Key or Enter in file mode | Play file                    |
+| Keybind                               | Usage                              |
+|---------------------------------------|------------------------------------|
+| Q                                     | Quit                               |
+| Arrow Keys                            | Navigate                           |
+| Tab                                   | Switch directories and files       |
+| L                                     | Toggle looping                     |
+| Right Arrow Key or Enter in file mode | Play file                          |
+| F                                     | Show selected file in file manager |

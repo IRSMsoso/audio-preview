@@ -227,8 +227,8 @@ impl App {
             Some(msg) => msg,
             None => "",
         })
-        .centered()
-        .render(area, buf);
+            .centered()
+            .render(area, buf);
     }
 
     fn render_progress_bar(&self, area: Rect, buf: &mut Buffer) {
@@ -277,6 +277,21 @@ impl App {
                 KeyCode::Tab => {
                     self.perusing_files = false;
                     self.stop_playing();
+                }
+                KeyCode::Char(char) => match char {
+                    'f' => 'a: {
+                        let Some(selection_index) = self.current_path_files_state.selected() else {
+                            break 'a;
+                        };
+
+                        let Some(path_to_show) = self.current_path_files.get(selection_index) else {
+                            break 'a
+                        };
+
+
+                        showfile::show_path_in_file_manager(path_to_show);
+                    }
+                    _ => {}
                 }
                 _ => {}
             },
@@ -335,7 +350,7 @@ fn get_files_and_directories_in_directory(
                 },
                 None => return false,
             }
-            .as_str(),
+                .as_str(),
         )
     });
 
