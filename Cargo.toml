@@ -1,6 +1,6 @@
 [package]
 name = "audio-preview"
-version = "0.2.1"
+version = "0.2.2"
 edition = "2021"
 description = "TUI for quickly navigating the file system and previewing audio files"
 repository = "https://github.com/IRSMsoso/audio-preview"
@@ -14,6 +14,9 @@ path = "src/main.rs"
 [dependencies]
 clap = { version = "4.5.16", features = ["derive"] }
 ratatui = "0.28.0"
-rodio = {version = "0.20.1", git = "https://github.com/IRSMsoso/rodio"}
+rodio = {version = "0.20.1"}
 anyhow = "1.0.86"
 showfile = "0.1.1"
+
+[patch.crates-io]
+rodio = { git = "https://github.com/IRSMsoso/rodio" }
