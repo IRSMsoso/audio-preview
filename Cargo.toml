@@ -1,11 +1,12 @@
 [package]
 name = "audio-preview"
-version = "0.2.2"
+version = "0.3.0"
 edition = "2021"
 description = "TUI for quickly navigating the file system and previewing audio files"
 repository = "https://github.com/IRSMsoso/audio-preview"
 readme = "README.md"
 license = "Apache-2.0"
+publish = false
 
 [[bin]]
 name = "listen"
@@ -14,9 +15,6 @@ path = "src/main.rs"
 [dependencies]
 clap = { version = "4.5.16", features = ["derive"] }
 ratatui = "0.28.0"
-rodio = {version = "0.20.1"}
+rodio = {git = "https://github.com/IRSMsoso/rodio"}
 anyhow = "1.0.86"
 showfile = "0.1.1"
-
-[patch.crates-io]
-rodio = { git = "https://github.com/IRSMsoso/rodio" }
