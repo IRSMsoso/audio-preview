@@ -4,6 +4,12 @@ Quickly preview your audio files!
 
 ## Installation
 
+### Option 1: Releases
+
+Grab the [latest release](https://github.com/IRSMsoso/audio-preview/releases)
+
+### Option 2: crates.io (Only up to version 0.2.0)
+
 - Install the Rust toolchain: [rustup.rs](https://rustup.rs)
 
 - `cargo install audio-preview --locked`
