@@ -8,7 +8,7 @@ Quickly preview your audio files!
 
 Grab the [latest release](https://github.com/IRSMsoso/audio-preview/releases)
 
-### Option 2: crates.io (Only up to version 0.2.0)
+### Option 2: crates.io
 
 - Install the Rust toolchain: [rustup.rs](https://rustup.rs)
 
