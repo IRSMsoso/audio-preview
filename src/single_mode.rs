@@ -1,21 +1,15 @@
-use rodio::{Decoder, OutputStream, Sink, Source};
+use rodio::{Decoder, OutputStream, OutputStreamBuilder, Sink, Source};
 use std::fs::File;
 use std::io::BufReader;
 use std::path::Path;
 
 pub(crate) fn run_single_mode(path: &impl AsRef<Path>, should_loop: bool) {
-    let Ok((_stream, stream_handle)) = OutputStream::try_default() else {
+    let Ok(output_stream) = OutputStreamBuilder::open_default_stream() else {
         eprintln!("Failed to open the default audio device");
         return;
     };
 
-    let sink = match Sink::try_new(&stream_handle) {
-        Ok(sink) => sink,
-        Err(e) => {
-            eprintln!("Play error: {}", e);
-            return;
-        }
-    };
+    let sink = Sink::connect_new(output_stream.mixer());
 
     let file = BufReader::new(match File::open(path) {
         Ok(file) => file,

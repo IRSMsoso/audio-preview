@@ -7,7 +7,7 @@ use ratatui::prelude::*;
 use ratatui::widgets::{
     Block, Borders, Gauge, HighlightSpacing, List, ListItem, ListState, Paragraph,
 };
-use rodio::{Decoder, OutputStream, Sink, Source};
+use rodio::{Decoder, OutputStream, OutputStreamBuilder, Sink, Source};
 use std::collections::HashMap;
 use std::env::current_dir;
 use std::fs::{read_dir, File};
@@ -43,9 +43,9 @@ impl App {
     fn create_from_directory(directory: impl AsRef<Path>) -> Self {
         let (directories, files) = get_files_and_directories_in_directory(&directory);
 
-        let (_stream, stream_handle) = OutputStream::try_default().unwrap();
+        let _stream = OutputStreamBuilder::open_default_stream().unwrap();
 
-        let sink = Sink::try_new(&stream_handle).unwrap();
+        let sink = Sink::connect_new(_stream.mixer());
 
         Self {
             current_path: directory.as_ref().to_owned(),
